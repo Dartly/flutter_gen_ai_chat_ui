@@ -14,7 +14,10 @@ dependencies:
   flutter:
     sdk: flutter
   provider: ^6.1.2
-  dash_chat_2: ^0.0.21
+  dash_chat_2:
+    git:
+      url: https://github.com/Dartly/Dash-Chat-2.git
+      ref: 2665dcc19a4401d6159ac477902e9778b0ae8b14
   shimmer: ^3.0.0
   google_fonts: ^6.2.1
   flutter_markdown: ^0.7.6 
