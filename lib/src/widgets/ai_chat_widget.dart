@@ -576,9 +576,12 @@ class AiChatWidgetState extends State<AiChatWidget>
       scrollController: _scrollController,
       showDateSeparator: isTablet,
       // Update pagination options to use correct parameters
-      onLoadEarlier: widget.config.enablePagination
-          ? () => widget.controller.loadMore()
-          : null,
+      onLoadEarlier: () async {
+        if (widget.config.paginationConfig.enabled ||
+            widget.config.enablePagination) {
+          await widget.controller.loadMore();
+        }
+      },
       loadEarlierBuilder: const LoadingWidget(),
     );
   }
