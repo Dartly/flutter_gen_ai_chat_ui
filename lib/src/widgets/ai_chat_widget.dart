@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen_ai_chat_ui/flutter_gen_ai_chat_ui.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
-import '../models/input_options.dart';
 import 'chat_input.dart';
 
 /// A customizable chat widget for AI conversations.
@@ -582,7 +581,7 @@ class AiChatWidgetState extends State<AiChatWidget>
           await widget.controller.loadMore();
         }
       },
-      loadEarlierBuilder: const LoadingWidget(),
+      loadEarlierBuilder: widget.config.paginationConfig.loadMoreIndicator?.call(isLoading: true)??const LoadingWidget()
     );
   }
 
